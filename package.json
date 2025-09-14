@@ -1,9 +1,14 @@
 {
-  "name": "stremio-skipper-addon",
+  "name": "skiprange-server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
-    "node-fetch": "^2.6.7",
-    "stremio-addon-sdk": "^1.11.0"
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.0"
   }
 }
