@@ -598,6 +598,7 @@ jobs:
           fi
 
       - name: Create zip archive of created project
+        id: create-and-commit
         run: |
           ZIP_NAME="stremio-skip-patcher-bootstrap-${{ github.run_id }}.zip"
           zip -r "$ZIP_NAME" patcher api analyzer README.md .github || true
