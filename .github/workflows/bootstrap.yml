@@ -594,7 +594,7 @@ jobs:
           else
             git pull --rebase --autostash
             git commit -m "Bootstrap monorepo structure: patcher, api, analyzer"
-            git push origin HEAD
+            git push https://x-access-token:${GH_PAT}@github.com/iHagoss/stremio-skip-button HEAD:main
           fi
 
       - name: Create zip archive of created project
