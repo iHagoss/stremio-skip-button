@@ -583,7 +583,7 @@ jobs:
           ./bootstrap.sh
           ls -R
 
-      - name: Commit and push created files
+      - name: Commit and push created files to PR branch
         run: |
           git config user.name "${GIT_AUTHOR_NAME}"
           git config user.email "${GIT_AUTHOR_EMAIL}"
@@ -599,10 +599,10 @@ jobs:
             git push origin "$BRANCH"
             gh pr create --title "Bootstrap monorepo structure" --body "Automated bootstrap commit" --base main --head "$BRANCH"
           fi
-           env:
+        env:
           GH_PAT: ${{ secrets.GH_PAT }}
           GH_TOKEN: ${{ secrets.GH_PAT }}
-      
+
       - name: Create zip archive of created project
         id: create-and-commit
         run: |
