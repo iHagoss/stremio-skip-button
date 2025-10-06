@@ -34,7 +34,7 @@ jobs:
           mkdir -p api/skip/tt9999999
           mkdir -p api/tests
           mkdir -p analyzer/tests
-          mkdir -p .github/workflows
+          mkdir -p temp./github/workflows
 
           echo "Writing patcher Android files..."
 
@@ -540,12 +540,12 @@ jobs:
           - patcher/: Android Studio project for the patcher app
           - api/: Node.js skip metadata server
           - analyzer/: Python analyzer to generate skip metadata
-          - .github/workflows/: CI workflows
+          - temp./github/workflows/: CI workflows
 
           Build instructions are included in each subfolder README.
           EOF
 
-          cat > .github/workflows/build.yml <<'EOF'
+          cat > temp./github/workflows/build.yml <<'EOF'
           name: Build Stremio Skip Patcher Monorepo
 
           on:
