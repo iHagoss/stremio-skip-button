@@ -592,6 +592,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
+            git  pull
             git commit -m "Bootstrap monorepo structure: patcher, api, analyzer"
             git push origin HEAD
           fi
