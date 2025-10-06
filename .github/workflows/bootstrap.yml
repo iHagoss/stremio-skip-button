@@ -594,7 +594,10 @@ jobs:
           else
             git pull --rebase --autostash
             git commit -m "Bootstrap monorepo structure: patcher, api, analyzer"
-            git push https://x-access-token:${GH_PAT}@github.com/iHagoss/stremio-skip-button HEAD:main
+            BRANCH="bootstrap-${{ github.run_id }}"
+            git checkout -b "$BRANCH"
+            git push https://x-access-token:${GH_PAT}@github.com/iHagoss/stremio-skip-button "$BRANCH"
+            gh pr create --title "Bootstrap monorepo structure" --body "Automated bootstrap commit" --base main --head "$BRANCH"
           fi
 
       - name: Create zip archive of created project
