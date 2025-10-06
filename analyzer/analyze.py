@@ -24,9 +24,9 @@ def main():
     parser.add_argument('--input', help='Input video file path')
     parser.add_argument('--output', default='output.json', help='Output JSON file path')
     parser.add_argument('--simulate', action='store_true', help='Generate sample data without analysis')
-    
+
     args = parser.parse_args()
-    
+
     if args.simulate or not args.input:
         # Generate sample data
         result = {
@@ -43,11 +43,11 @@ def main():
     else:
         # Analyze actual file
         result = analyze_file(args.input)
-    
+
     # Write output
     with open(args.output, 'w') as f:
         json.dump(result, f, indent=2)
-    
+
     print(f"Analysis complete. Results saved to {args.output}")
 
 if __name__ == '__main__':

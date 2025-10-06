@@ -15,7 +15,7 @@ app.get('/health', (req, res) => {
 app.get('/skip/:imdbId/:season/:episode', (req, res) => {
   const { imdbId, season, episode } = req.params;
   const filePath = path.join(__dirname, 'skip', imdbId, `s${season}e${episode}.json`);
-  
+
   try {
     if (fs.existsSync(filePath)) {
       const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));

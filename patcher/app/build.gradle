@@ -5,7 +5,7 @@ plugins {
 
 android {
     compileSdkVersion 33
-    
+
     defaultConfig {
         applicationId "com.stremio.skipintro.patcher"
         minSdkVersion 21
@@ -13,7 +13,7 @@ android {
         versionCode 1
         versionName "1.0"
     }
-    
+
     signingConfigs {
         release {
             storeFile file("../keystore/debug.keystore")
@@ -22,7 +22,7 @@ android {
             keyPassword "androiddebug"
         }
     }
-    
+
     buildTypes {
         release {
             signingConfig signingConfigs.release
@@ -33,12 +33,12 @@ android {
             signingConfig signingConfigs.release
         }
     }
-    
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
-    
+
     kotlinOptions {
         jvmTarget = '11'
     }
