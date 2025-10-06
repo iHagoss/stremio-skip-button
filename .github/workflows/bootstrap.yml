@@ -3,9 +3,6 @@ name: Bootstrap Stremio Skip Patcher Monorepo
 on:
   workflow_dispatch:
 
-permissions:
-  contents: write-all
-
 jobs:
   create-and-commit:
     runs-on: ubuntu-latest
