@@ -7,7 +7,7 @@ describe('Skip API', () => {
     expect(response.status).toBe(200);
     expect(response.body.status).toBe('ok');
   });
-  
+
   test('GET /skip existing file returns JSON', async () => {
     const response = await request(app).get('/skip/tt9999999/1/1');
     expect(response.status).toBe(200);
