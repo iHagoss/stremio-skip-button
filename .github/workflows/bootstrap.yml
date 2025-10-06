@@ -599,7 +599,10 @@ jobs:
             git push origin "$BRANCH"
             gh pr create --title "Bootstrap monorepo structure" --body "Automated bootstrap commit" --base main --head "$BRANCH"
           fi
-
+           env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+      
       - name: Create zip archive of created project
         id: create-and-commit
         run: |
