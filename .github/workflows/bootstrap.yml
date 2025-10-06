@@ -596,7 +596,8 @@ jobs:
             git commit -m "Bootstrap monorepo structure: patcher, api, analyzer"
             BRANCH="bootstrap-${{ github.run_id }}"
             git checkout -b "$BRANCH"
-            git push https://x-access-token:${GH_PAT}@github.com/iHagoss/stremio-skip-button "$BRANCH"
+            git remote set-url origin https://x-access-token:${GH_PAT}@github.com/iHagoss/stremio-skip-button
+            git push origin "$BRANCH"
             gh pr create --title "Bootstrap monorepo structure" --body "Automated bootstrap commit" --base main --head "$BRANCH"
           fi
 
